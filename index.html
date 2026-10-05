@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Territorio Panaca | Documentos del proyecto</title>
+<meta name="description" content="Consulta, lee y descarga los documentos oficiales del Proyecto Turístico Especial Territorio Panaca en Quimbaya, Quindío.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde: #14513F;        /* verde del logo: color principal */
+    --verde-osc: #0D3B2E;
+    --rojo-logo: #E8102A;    /* rojo del logo: solo para el logo */
+    --guadua: #8A9A4B;       /* verde guadua: apoyo */
+    --tierra: #5A3A22;       /* café tostado: titulares */
+    --crema: #F4EDE1;        /* bahareque: fondo */
+    --crema-2: #EAE0CF;
+    --ambar: #E09A2B;        /* farol: llamados a la acción */
+    --ambar-osc: #B8761A;
+    --oro: #B8893B;          /* orfebrería Quimbaya: acentos */
+    --texto: #2B2620;
+    --texto-2: #5E554A;
+    --blanco: #FFFDF9;
+    --borde: #DCCFB9;
+    --radio: 16px;
+    --sombra: 0 1px 2px rgba(60,40,20,.06), 0 8px 24px rgba(60,40,20,.08);
+    --ancho: 1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--crema); color:var(--texto);
+    font-family:"Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Lora", Georgia, serif; color:var(--tierra); line-height:1.2; margin:0}
+  a{color:var(--verde)}
+  .contenedor{max-width:var(--ancho); margin:0 auto; padding:0 20px}
+  .salto{position:absolute; left:-999px; top:8px; background:var(--verde); color:#fff; padding:8px 14px; border-radius:8px; z-index:99}
+  .salto:focus{left:12px}
+  :focus-visible{outline:3px solid var(--ambar); outline-offset:3px; border-radius:6px}
+  [tabindex="-1"]:focus{outline:none}
+
+  /* Encabezado */
+  header.barra{background:var(--blanco); color:var(--verde); border-bottom:3px solid var(--verde); position:sticky; top:0; z-index:20; box-shadow:0 2px 10px rgba(0,0,0,.12)}
+  .barra .contenedor{display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:68px}
+  .marca{display:flex; align-items:center; gap:12px; color:var(--verde); text-decoration:none}
+  .marca img{height:44px; width:auto; display:block}
+  .marca-texto{font-size:.8rem; font-weight:600; color:var(--texto-2); border-left:1px solid var(--borde); padding-left:12px; line-height:1.25}
+  @media (max-width:560px){ .marca-texto{display:none} .marca img{height:38px} }
+  .btn-inicio{
+    display:inline-flex; align-items:center; gap:8px; color:var(--verde); text-decoration:none; font-weight:700;
+    border:1.5px solid var(--verde); padding:8px 16px; border-radius:999px; transition:background .2s;
+  }
+  .btn-inicio:hover{background:var(--crema)}
+  .btn-inicio[aria-current="page"]{background:var(--verde); color:#fff}
+
+  /* Portada */
+  .portada{
+    background:
+      linear-gradient(90deg, rgba(13,59,46,.94) 0%, rgba(13,59,46,.82) 45%, rgba(13,59,46,.35) 100%),
+      url("img/portada-aereo.jpg") center/cover no-repeat, var(--verde-osc);
+    color:#fff; padding:64px 0 110px; position:relative; overflow:hidden;
+  }
+  .portada::after{ /* silueta de montañas cafeteras */
+    content:""; position:absolute; left:0; right:0; bottom:-1px; height:70px;
+    background:var(--crema);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath d='M0 70V38c90-20 170-30 260-14s170 30 270 6 190-40 300-22 190 34 300 14 200-28 310-10v58z' fill='%23000'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+            mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath d='M0 70V38c90-20 170-30 260-14s170 30 270 6 190-40 300-22 190 34 300 14 200-28 310-10v58z' fill='%23000'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+  }
+  .etiqueta{display:inline-block; background:rgba(255,255,255,.14); color:#fff; font-weight:600; font-size:.8rem; letter-spacing:.6px; text-transform:uppercase; padding:6px 12px; border-radius:999px}
+  .portada h1{color:#fff; font-size:clamp(2rem, 5vw, 3.2rem); margin:16px 0 14px}
+  .portada p{max-width:640px; font-size:1.12rem; opacity:.95; margin:0}
+  @media (max-width:720px){ .portada{background:linear-gradient(rgba(13,59,46,.9), rgba(13,59,46,.9)), url("img/portada-aereo.jpg") center/cover no-repeat, var(--verde-osc); padding:44px 0 96px} }
+  .datos{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; padding:0; list-style:none}
+  .datos li{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:10px 16px; font-size:.95rem}
+  .datos strong{display:block; font-family:"Lora", serif; font-size:1.15rem; color:#F6D39A}
+
+  /* Tarjetas */
+  .seccion-tarjetas{margin-top:-48px; position:relative; z-index:2; padding-bottom:64px}
+  .rejilla{display:flex; flex-wrap:wrap; justify-content:center; gap:24px}
+  .rejilla > .tarjeta{flex:0 1 calc((100% - 48px) / 3); min-width:0}
+  @media (max-width:900px){ .rejilla > .tarjeta{flex-basis:calc((100% - 24px) / 2)} }
+  @media (max-width:560px){ .rejilla > .tarjeta{flex-basis:100%} }
+  .tarjeta-img{aspect-ratio:4/3}
+  .tarjeta{
+    display:flex; flex-direction:column; background:var(--blanco); border-radius:var(--radio); overflow:hidden;
+    text-decoration:none; color:inherit; box-shadow:var(--sombra); border:1px solid var(--borde);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .tarjeta:hover{transform:translateY(-4px); box-shadow:0 2px 4px rgba(60,40,20,.08), 0 16px 36px rgba(60,40,20,.14)}
+  .tarjeta-img{aspect-ratio:1/1; display:grid; place-items:center; position:relative; overflow:hidden}
+  .tarjeta-img img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
+  .tarjeta:hover .tarjeta-img img{transform:scale(1.04)}
+  .tarjeta-img svg{width:44%; height:auto}
+  .t-res .tarjeta-img{background:linear-gradient(145deg,#3B6E47,#2F5D3A)}
+  .t-car .tarjeta-img{background:linear-gradient(145deg,#9AAA58,#7E8D40)}
+  .t-mit .tarjeta-img{background:linear-gradient(145deg,#C9993F,#B07F2E)}
+  .t-pma .tarjeta-img{background:linear-gradient(145deg,#6E4A2E,#5A3A22)}
+  .tarjeta-cuerpo{padding:16px 18px 20px; display:flex; flex-direction:column; gap:6px; flex:1}
+  .tarjeta-cuerpo h2{font-size:1.25rem}
+  .tarjeta-cuerpo p{margin:0; color:var(--texto-2); font-size:.95rem}
+  .tarjeta-ir{margin-top:auto; padding-top:10px; font-weight:700; color:var(--ambar-osc); display:flex; align-items:center; gap:6px}
+  .tarjeta:hover .tarjeta-ir span{transform:translateX(3px)}
+  .tarjeta-ir span{transition:transform .2s}
+
+  /* Vistas internas */
+  .vista{display:none}
+  .vista.activa{display:block}
+  .cabecera-vista{background:var(--verde); color:#fff; padding:36px 0 40px}
+  .migas{font-size:.9rem; opacity:.9; margin-bottom:10px}
+  .migas a{color:#fff}
+  .cabecera-vista h1{color:#fff; font-size:clamp(1.7rem, 4vw, 2.5rem)}
+  .cabecera-vista p{margin:10px 0 0; max-width:760px; opacity:.95}
+  .cuerpo-vista{padding:36px 0 64px; display:grid; gap:28px}
+  .bloque{background:var(--blanco); border:1px solid var(--borde); border-radius:var(--radio); padding:28px; box-shadow:var(--sombra)}
+  .bloque h2{font-size:1.45rem; margin-bottom:14px; display:flex; align-items:center; gap:10px}
+  .bloque h2 .num{width:30px; height:30px; border-radius:50%; background:var(--ambar); color:#fff; font-family:"Source Sans 3"; font-size:.95rem; display:grid; place-items:center; flex:none}
+  .bloque h3{font-size:1.1rem; margin:22px 0 8px; color:var(--verde)}
+  .justificado p, .justificado li{text-align:justify; hyphens:auto}
+  .bloque p{margin:0 0 12px}
+  .bloque ul{margin:0 0 12px; padding-left:22px}
+  .bloque li{margin-bottom:6px}
+  .ficha{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin:6px 0 18px}
+  .ficha div{background:var(--crema); border-radius:12px; padding:12px 14px; border-left:4px solid var(--oro)}
+  .ficha span{display:block; font-size:.8rem; text-transform:uppercase; letter-spacing:.5px; color:var(--texto-2); font-weight:600}
+  .ficha strong{font-size:1.02rem; color:var(--tierra)}
+  .aviso{background:#FBF3E4; border:1px solid #EBCF9E; border-radius:12px; padding:14px 16px; font-size:.95rem}
+  .aviso strong{color:var(--tierra)}
+  .si-no{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  @media (max-width:720px){ .si-no{grid-template-columns:1fr} }
+  .si-no > div{border-radius:12px; padding:16px 18px}
+  .si{background:#EEF3E6; border:1px solid #CBD8B3}
+  .no{background:#F8ECE4; border:1px solid #E6C7B2}
+  .si h3{color:var(--verde); margin-top:0}
+  .no h3{color:#8A3B1E; margin-top:0}
+  .programas{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px}
+  .programas > div{background:var(--crema); border-radius:12px; padding:16px 18px}
+  .programas h3{margin-top:0}
+  .programas ul{padding-left:18px; margin:0}
+  .programas li{font-size:.95rem}
+
+  /* Visor y descarga */
+  .visor-marco{border:1px solid var(--borde); border-radius:12px; overflow:hidden; background:#E9E4DA}
+  .visor-marco iframe{display:block; width:100%; height:78vh; min-height:520px; border:0}
+  .acciones{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; align-items:center}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:1rem; border:2px solid transparent; cursor:pointer}
+  .btn-primario{background:var(--ambar); color:#2B1A05}
+  .btn-primario:hover{background:#EBAA43}
+  .btn-secundario{background:transparent; color:var(--verde); border-color:var(--verde)}
+  .btn-secundario:hover{background:var(--verde); color:#fff}
+  .peso{font-size:.9rem; color:var(--texto-2)}
+  .solo-movil{display:none}
+  @media (max-width:720px){
+    .visor-marco iframe{height:60vh; min-height:380px}
+    .solo-movil{display:block}
+  }
+
+  /* Plantillas vacías */
+  .vacio{border:2px dashed var(--borde); border-radius:var(--radio); padding:40px 24px; text-align:center; background:var(--blanco)}
+  .vacio svg{width:56px; height:56px; margin-bottom:10px}
+  .vacio h2{font-size:1.3rem; margin-bottom:8px}
+  .vacio p{color:var(--texto-2); max-width:560px; margin:0 auto}
+  .acordeon{display:grid; gap:12px}
+  .acordeon details{background:var(--blanco); border:1px solid var(--borde); border-radius:12px; overflow:hidden}
+  .acordeon summary{cursor:pointer; padding:16px 20px; font-weight:700; color:var(--tierra); list-style:none; display:flex; gap:12px; align-items:flex-start}
+  .acordeon summary::-webkit-details-marker{display:none}
+  .acordeon summary::before{content:"+"; flex:none; width:26px; height:26px; border-radius:50%; background:var(--crema-2); color:var(--tierra); display:grid; place-items:center; font-weight:700}
+  .acordeon details[open] summary::before{content:"−"; background:var(--ambar); color:#2B1A05}
+  .acordeon .mito-tag{font-size:.75rem; text-transform:uppercase; letter-spacing:.6px; color:#8A3B1E; display:block}
+  .acordeon .realidad{padding:0 20px 18px 58px}
+  .acordeon .realidad .tag{font-size:.75rem; text-transform:uppercase; letter-spacing:.6px; color:var(--verde); font-weight:700}
+  .acordeon .fuente{font-size:.88rem; color:var(--texto-2); margin-top:6px}
+  .galeria-mapas{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px}
+  .galeria-mapas figure{margin:0; background:var(--blanco); border:1px solid var(--borde); border-radius:12px; overflow:hidden}
+  .galeria-mapas img{width:100%; display:block}
+  .galeria-mapas figcaption{padding:12px 14px; font-size:.95rem}
+
+  .lema{font-family:"Lora", serif; font-style:italic; color:var(--verde); font-weight:600; margin-top:8px}
+  .acordeon summary{font-size:1.1rem}
+  .acordeon .mito-tag{font-weight:800}
+  .ganancias{list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:10px}
+  .ganancias li{background:var(--crema); border-radius:10px; padding:12px 14px 12px 42px; position:relative; font-weight:600; color:var(--tierra); margin:0}
+  .ganancias li::before{content:""; position:absolute; left:14px; top:50%; width:16px; height:16px; margin-top:-8px; border-radius:50%; background:var(--guadua) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' stroke='white' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/100% no-repeat}
+  .especies{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; margin:6px 0 12px}
+  .especies > div{background:#EEF3E6; border:1px solid #CBD8B3; border-radius:12px; padding:14px 16px}
+  .especies h3{margin:0 0 6px}
+  .especies p{margin:0; font-size:.95rem; text-align:left}
+  .cierre{text-align:center; font-family:"Lora", serif; font-size:1.2rem; color:var(--verde); font-weight:600; max-width:720px; margin:8px auto 0}
+
+  .linea{list-style:none; padding:0 0 0 18px; margin:0 0 12px; border-left:2px solid var(--guadua); display:grid; gap:12px}
+  .linea li{position:relative; margin:0}
+  .linea li::before{content:""; position:absolute; left:-25px; top:.55em; width:12px; height:12px; border-radius:50%; background:var(--ambar); border:2px solid var(--blanco)}
+  .linea strong{color:var(--tierra)}
+  .vacio h2{justify-content:center}
+  /* Pie */
+  footer{background:var(--tierra); color:#F1E7D6; padding:36px 0; font-size:.95rem}
+  footer .contenedor{display:grid; gap:18px; grid-template-columns:2fr 1fr}
+  @media (max-width:720px){ footer .contenedor{grid-template-columns:1fr} }
+  footer h2{color:#fff; font-size:1.15rem; margin-bottom:6px}
+  footer p{margin:0 0 6px}
+  footer a{color:#F6D39A}
+  .pendiente{opacity:.75; font-style:italic}
+
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important; scroll-behavior:auto!important} }
+</style>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="barra">
+  <div class="contenedor">
+    <a class="marca" href="#inicio" aria-label="Territorio Panaca, ir al inicio">
+      <img src="img/logo-territorio-panaca.png" alt="Territorio Panaca">
+      <span class="marca-texto">Proyecto Turístico Especial<br>Quimbaya, Quindío</span>
+    </a>
+    <a class="btn-inicio" href="#inicio" data-nav="inicio">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+      Inicio
+    </a>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============ INICIO ============ -->
+<section class="vista" id="v-inicio" data-vista="inicio" aria-labelledby="t-inicio">
+  <div class="portada">
+    <div class="contenedor">
+      <span class="etiqueta">Información pública del proyecto</span>
+      <h1 id="t-inicio">Territorio Panaca</h1>
+      <p>En este espacio están los documentos oficiales del Proyecto Turístico Especial Territorio Panaca. Cualquier persona puede consultarlos, leerlos y descargarlos. Cada documento viene con un resumen en lenguaje sencillo, para que las decisiones sobre el territorio se tomen con información completa y verificable.</p>
+      <ul class="datos">
+        <li><strong>Quimbaya, Quindío</strong>Entre las quebradas La Silenciosa y Buenavista</li>
+        <li><strong>144,46 ha</strong>Área del proyecto según la ANLA</li>
+        <li><strong>Res. 000735 de 2026</strong>Viabilidad ambiental del PMA</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seccion-tarjetas">
+    <div class="contenedor">
+      <div class="rejilla">
+        <a class="tarjeta t-pm" href="#plan-maestro">
+          <div class="tarjeta-img"><img src="img/plan-maestro.jpg" alt="" loading="lazy"></div>
+          <div class="tarjeta-cuerpo">
+            <h2>Plan Maestro</h2>
+            <p>Aprobación del Ministerio de Comercio, Industria y Turismo como Proyecto Turístico Especial.</p>
+            <span class="tarjeta-ir">Ver documento <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="tarjeta t-res" href="#resolucion">
+          <div class="tarjeta-img"><img src="img/resolucion.jpg" alt="" loading="lazy"></div>
+          <div class="tarjeta-cuerpo">
+            <h2>Resolución</h2>
+            <p>Decisión de la ANLA sobre el Plan de Manejo Ambiental: qué se autorizó y qué no.</p>
+            <span class="tarjeta-ir">Ver documento <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="tarjeta t-pma" href="#pma">
+          <div class="tarjeta-img"><img src="img/pma.jpg" alt="" loading="lazy"></div>
+          <div class="tarjeta-cuerpo">
+            <h2>PMA</h2>
+            <p>Plan de Manejo Ambiental: los 23 programas para cuidar el agua, el suelo, la fauna y la comunidad.</p>
+            <span class="tarjeta-ir">Ver documento <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="tarjeta t-car" href="#cartografia">
+          <div class="tarjeta-img"><img src="img/cartografia.jpg" alt="" loading="lazy"></div>
+          <div class="tarjeta-cuerpo">
+            <h2>Cartografía</h2>
+            <p>Mapas del área del proyecto, de las zonas protegidas y de las veredas vecinas.</p>
+            <span class="tarjeta-ir">Ver mapas <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="tarjeta t-mit" href="#mitos">
+          <div class="tarjeta-img"><img src="img/mitos.jpg" alt="" loading="lazy"></div>
+          <div class="tarjeta-cuerpo">
+            <h2>Mitos y realidades</h2>
+            <p>Respuestas a lo que se dice sobre el proyecto: agua, árboles, empleo y turismo sostenible.</p>
+            <span class="tarjeta-ir">Ver respuestas <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAN MAESTRO ============ -->
+<section class="vista" id="v-plan-maestro" data-vista="plan-maestro" aria-labelledby="t-pm">
+  <div class="cabecera-vista">
+    <div class="contenedor">
+      <nav class="migas" aria-label="Ruta"><a href="#inicio">Inicio</a> / Plan Maestro</nav>
+      <h1 id="t-pm">Plan Maestro</h1>
+      <p>El Ministerio de Comercio, Industria y Turismo aprobó el Plan Maestro de Territorio Panaca, el primer Proyecto Turístico Especial del país.</p>
+    </div>
+  </div>
+  <div class="contenedor cuerpo-vista">
+    <article class="bloque justificado">
+      <h2><span class="num">1</span>Resumen</h2>
+      <div class="ficha">
+        <div><span>Entidad</span><strong>MinCIT</strong></div>
+        <div><span>Aprobación</span><strong>Res. 0633 de 2024</strong></div>
+        <div><span>Calificación como PTE</span><strong>Res. 930 de 2021</strong></div>
+        <div><span>Área</span><strong>143,45 ha</strong></div>
+      </div>
+
+      <h3>Qué es un Proyecto Turístico Especial</h3>
+      <p>Los Proyectos Turísticos Especiales son iniciativas de gran escala definidas por el Gobierno Nacional para atraer inversión en infraestructura turística, generar empleo y fortalecer la oferta del país. Cada uno necesita un Plan Maestro, que es la hoja de ruta de la inversión, aprobado por el Ministerio de Comercio, Industria y Turismo. Territorio Panaca es el primer proyecto aprobado bajo esta figura, reglamentada en 2020 por el Decreto 1155.</p>
+
+      <h3>El trámite</h3>
+      <ul class="linea">
+        <li><strong>Octubre de 2021.</strong> Con la Resolución 930, MinCIT calificó a Territorio Panaca como Proyecto Turístico Especial de gran escala en el Quindío.</li>
+        <li><strong>2022.</strong> Con la Resolución 1580, MinCIT negó la primera versión del Plan Maestro.</li>
+        <li><strong>Mayo de 2024.</strong> Con la Resolución 0633, MinCIT aprobó el Plan Maestro.</li>
+        <li><strong>Marzo de 2026.</strong> La ANLA dio viabilidad ambiental al Plan de Manejo Ambiental con la <a href="#resolucion">Resolución 000735</a>.</li>
+      </ul>
+
+      <h3>Qué contempla</h3>
+      <p>Según la información divulgada por MinCIT al aprobarlo, el Plan Maestro prevé una inversión cercana a 896.200 millones de pesos, ejecutada en 10 etapas durante seis años. Integra agroturismo, turismo rural, de naturaleza, de aventura, cultural y de bienestar y salud, junto con vivienda turística, educación y servicios de salud.</p>
+
+      <p class="aviso"><strong>Importante:</strong> este resumen es informativo. El documento que rige es la resolución de aprobación del Plan Maestro, que estará disponible para consulta y descarga en esta sección.</p>
+    </article>
+
+    <article class="bloque">
+      <h2><span class="num">2</span>Lee el documento</h2>
+      <div class="vacio">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#B8893B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 6h22l10 10v42H16z"/><path d="M38 6v10h10"/><path d="M23 28h18M23 35h18M23 42h10"/></svg>
+        <h2>Documento en preparación</h2>
+        <p>Muy pronto podrás leer y descargar aquí la resolución de aprobación del Plan Maestro.</p>
+      </div>
+      <!-- CUANDO LLEGUE EL PDF, reemplazar el bloque .vacio por:
+      <div class="visor-marco"><iframe src="docs/plan-maestro-mincit-0633-2024.pdf#view=FitH" title="Visor del Plan Maestro" loading="lazy"></iframe></div>
+      y agregar los botones de descarga como en las demás secciones. -->
+    </article>
+  </div>
+</section>
+
+<!-- ============ RESOLUCIÓN ============ -->
+<section class="vista" id="v-resolucion" data-vista="resolucion" aria-labelledby="t-res">
+  <div class="cabecera-vista">
+    <div class="contenedor">
+      <nav class="migas" aria-label="Ruta"><a href="#inicio">Inicio</a> / Resolución</nav>
+      <h1 id="t-res">Resolución ANLA 000735 de 2026</h1>
+      <p>La Autoridad Nacional de Licencias Ambientales dio viabilidad ambiental al Plan de Manejo Ambiental del proyecto, con condiciones y obligaciones de cumplimiento.</p>
+    </div>
+  </div>
+  <div class="contenedor cuerpo-vista">
+    <article class="bloque justificado">
+      <h2><span class="num">1</span>Resumen</h2>
+      <div class="ficha">
+        <div><span>Entidad</span><strong>ANLA</strong></div>
+        <div><span>Fecha</span><strong>13 de marzo de 2026</strong></div>
+        <div><span>Expediente</span><strong>LAM9950-00</strong></div>
+        <div><span>Concepto técnico</span><strong>N.° 2544 de 2026</strong></div>
+      </div>
+
+      <h3>Qué decide</h3>
+      <p>La Resolución da viabilidad ambiental al Plan de Manejo Ambiental (PMA) del Proyecto Turístico Especial Territorio Panaca, presentado por la sociedad Territorio Panaca PTE S.A.S. El proyecto ocupa 144,46 hectáreas en el municipio de Quimbaya, entre las quebradas La Silenciosa y Buenavista. El PMA se otorga por el tiempo que dure el proyecto y la ANLA hará seguimiento a su cumplimiento.</p>
+
+      <h3>Dónde aplica</h3>
+      <p>El área de influencia socioeconómica definida por la ANLA comprende la cabecera municipal de Quimbaya y las veredas Kerman, Palermo La Tigrera, La Montaña, La Granja, Ceilán y El Rocío.</p>
+
+      <h3>Cómo se desarrolla</h3>
+      <p>La obra se divide en 10 etapas, con vías internas, redes de servicios públicos, vivienda turística, parques y equipamientos comunitarios, educativos y de salud. La intervención de áreas nuevas no puede superar 52,46 hectáreas, y cada red y cada vía tiene un límite máximo de longitud fijado en la Resolución.</p>
+
+      <h3>Qué se autorizó y qué no</h3>
+      <div class="si-no">
+        <div class="si">
+          <h3>Autorizado</h3>
+          <ul>
+            <li>Vertimiento de aguas residuales domésticas tratadas en cuatro puntos sobre las quebradas Buenavista y La Silenciosa, con obligaciones de monitoreo.</li>
+            <li>Aprovechamiento forestal único de 821 árboles, equivalentes a 718,37 m³, en un área de 38,41 hectáreas.</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h3>No autorizado</h3>
+          <ul>
+            <li>La concesión para captar agua de la quebrada Buenavista y la bocatoma asociada.</li>
+            <li>La ocupación de cauce para construir un dique en esa quebrada.</li>
+            <li>La intervención del área auxiliar A3.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Zonas protegidas</h3>
+      <p>La Resolución fija áreas de exclusión donde no se puede construir vivienda turística, habitacional, de soporte ni vías. Entre ellas están los nacederos y manantiales, con una franja de protección de 100 metros. Tampoco autoriza intervenir sitios arqueológicos, que son competencia exclusiva del ICANH.</p>
+
+      <h3>Compensación ambiental</h3>
+      <p>El proyecto debe restaurar 30,87 hectáreas con enfoque de rehabilitación, dentro de la subzona hidrográfica del río La Vieja, como compensación por la afectación de ecosistemas transformados.</p>
+
+      <p class="aviso"><strong>Importante:</strong> este resumen es informativo. El documento que rige es la Resolución completa, que puedes leer y descargar abajo.</p>
+    </article>
+
+    <article class="bloque">
+      <h2><span class="num">2</span>Lee el documento</h2>
+      <div class="visor-marco">
+        <iframe src="docs/resolucion-anla-000735-2026.pdf#view=FitH" title="Visor de la Resolución ANLA 000735 de 2026" loading="lazy"></iframe>
+      </div>
+      <p class="solo-movil peso">Si el documento no se ve en tu celular, ábrelo en una pestaña nueva.</p>
+      <div class="acciones">
+        <a class="btn btn-primario" href="docs/resolucion-anla-000735-2026.pdf" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Descargar resolución
+        </a>
+        <a class="btn btn-secundario" href="docs/resolucion-anla-000735-2026.pdf" target="_blank" rel="noopener">Abrir en pestaña nueva</a>
+        <span class="peso">PDF · 523 páginas · 5,2 MB</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ CARTOGRAFÍA (plantilla) ============ -->
+<section class="vista" id="v-cartografia" data-vista="cartografia" aria-labelledby="t-car">
+  <div class="cabecera-vista">
+    <div class="contenedor">
+      <nav class="migas" aria-label="Ruta"><a href="#inicio">Inicio</a> / Cartografía</nav>
+      <h1 id="t-car">Cartografía del proyecto</h1>
+      <p>Mapas del área del proyecto, de la zonificación ambiental y de las veredas del área de influencia.</p>
+    </div>
+  </div>
+  <div class="contenedor cuerpo-vista">
+    <div id="mapas-contenido"></div>
+  </div>
+</section>
+
+<!-- ============ MITOS Y REALIDADES (plantilla) ============ -->
+<section class="vista" id="v-mitos" data-vista="mitos" aria-labelledby="t-mit">
+  <div class="cabecera-vista">
+    <div class="contenedor">
+      <nav class="migas" aria-label="Ruta"><a href="#inicio">Inicio</a> / Mitos y realidades</nav>
+      <h1 id="t-mit">Mitos y realidades</h1>
+      <p>Lo que se dice sobre el proyecto y lo que el proyecto responde.</p>
+    </div>
+  </div>
+  <div class="contenedor cuerpo-vista" id="mitos-contenido">
+  </div>
+</section>
+
+<!-- ============ PMA ============ -->
+<section class="vista" id="v-pma" data-vista="pma" aria-labelledby="t-pma">
+  <div class="cabecera-vista">
+    <div class="contenedor">
+      <nav class="migas" aria-label="Ruta"><a href="#inicio">Inicio</a> / PMA</nav>
+      <h1 id="t-pma">Plan de Manejo Ambiental</h1>
+      <p>Las medidas para prevenir, mitigar, corregir y compensar los impactos del proyecto durante su construcción, operación y cierre.</p>
+    </div>
+  </div>
+  <div class="contenedor cuerpo-vista">
+    <article class="bloque justificado">
+      <h2><span class="num">1</span>Resumen</h2>
+      <div class="ficha">
+        <div><span>Documento</span><strong>Capítulo 9. Planes y programas</strong></div>
+        <div><span>Elaborado por</span><strong>GAIA, Medellín</strong></div>
+        <div><span>Fecha de emisión</span><strong>26 de noviembre de 2025</strong></div>
+        <div><span>Programas</span><strong>23 fichas de manejo</strong></div>
+      </div>
+
+      <h3>Para qué sirve</h3>
+      <p>El Plan de Manejo Ambiental define, para cada impacto identificado, qué medida se aplica, dónde, con qué metas, en qué momento y quién responde por ella. Cubre todas las fases del proyecto: construcción, mantenimiento, operación, desmantelamiento y abandono. La ANLA aprobó sus programas mediante la Resolución 000735 de 2026 y les hará seguimiento durante toda la vida útil del proyecto.</p>
+
+      <h3>Los programas, por tema</h3>
+      <div class="programas">
+        <div>
+          <h3>Suelo, agua, aire y paisaje</h3>
+          <ul>
+            <li>Manejo de material sobrante de excavación y escombros</li>
+            <li>Manejo de materiales, vehículos y maquinaria</li>
+            <li>Manejo de suelos y taludes</li>
+            <li>Manejo de residuos sólidos y líquidos</li>
+            <li>Manejo del recurso hídrico superficial</li>
+            <li>Manejo de escorrentía</li>
+            <li>Manejo de emisiones atmosféricas y ruido</li>
+            <li>Manejo paisajístico</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Flora, fauna y ecosistemas</h3>
+          <ul>
+            <li>Manejo de remoción de cobertura vegetal y descapote</li>
+            <li>Manejo de fauna terrestre</li>
+            <li>Manejo de flora</li>
+            <li>Protección de hábitats y especies endémicas, amenazadas o en veda</li>
+            <li>Protección de especies vasculares y no vasculares</li>
+            <li>Revegetalización de áreas intervenidas</li>
+            <li>Manejo del recurso hídrico e hidrobiológico</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Comunidad e instituciones</h3>
+          <ul>
+            <li>Información y participación comunitaria y de autoridades locales</li>
+            <li>Educación y capacitación del personal del proyecto</li>
+            <li>Atención de peticiones, quejas, reclamos y solicitudes</li>
+            <li>Apoyo a la gestión institucional</li>
+            <li>Educación y capacitación comunitaria</li>
+            <li>Infraestructura vial y social</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Atención a la comunidad</h3>
+      <p>El PMA establece un sistema de atención de peticiones, quejas, reclamos y solicitudes, con oficina en el proyecto, línea telefónica y correo electrónico, y la opción de presentar solicitudes de forma anónima. La meta es registrar el 100 % de las solicitudes y darles trámite en un plazo máximo de 15 días hábiles.</p>
+
+      <p class="aviso"><strong>Importante:</strong> el programa de captación de agua superficial que incluía el documento no hace parte de los programas aprobados, porque la ANLA no autorizó esa captación. El documento que rige es el PMA completo, junto con la Resolución 000735 de 2026.</p>
+    </article>
+
+    <article class="bloque">
+      <h2><span class="num">2</span>Lee el documento</h2>
+      <div class="visor-marco">
+        <iframe src="docs/plan-de-manejo-ambiental-territorio-panaca.pdf#view=FitH" title="Visor del Plan de Manejo Ambiental de Territorio Panaca" loading="lazy"></iframe>
+      </div>
+      <p class="solo-movil peso">Si el documento no se ve en tu celular, ábrelo en una pestaña nueva.</p>
+      <div class="acciones">
+        <a class="btn btn-primario" href="docs/plan-de-manejo-ambiental-territorio-panaca.pdf" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Descargar PMA
+        </a>
+        <a class="btn btn-secundario" href="docs/plan-de-manejo-ambiental-territorio-panaca.pdf" target="_blank" rel="noopener">Abrir en pestaña nueva</a>
+        <span class="peso">PDF · 136 páginas · 11,3 MB</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="contenedor">
+    <div>
+      <h2>Territorio Panaca PTE S.A.S.</h2>
+      <p>NIT 901.457.359-9 · Quimbaya, Quindío</p>
+      <p>Los documentos publicados en este sitio son copia de los actos y estudios oficiales del proyecto.</p>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <!-- REEMPLAZAR con los datos oficiales del sistema de PQRS -->
+      <p class="pendiente">Correo y línea de atención: por definir</p>
+      <p class="pendiente">Oficina de atención: por definir</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   CONTENIDO EDITABLE
+   Para agregar mitos o mapas, completa estas listas.
+   Mientras estén vacías, la página muestra un aviso de "en preparación".
+   ========================================================= */
+
+/* Ejemplo de un mito:
+   { mito: "Texto del mito tal como circula",
+     realidad: "Respuesta clara y verificable.",
+     fuente: "Resolución ANLA 000735 de 2026, artículo quinto",
+     enlace: "#resolucion" }                                     */
+const MITOS = [
+  { mito: "Se van a acabar el agua de Quimbaya",
+    realidad: [
+      "La captación de agua se ubica abajo del municipio y no se conecta directamente a sus redes. El proyecto contará con Plantas de Potabilización de Agua y de Tratamiento de Aguas Residuales, exclusivas del proyecto.",
+      "El proyecto cuenta con instrumentos de manejo ambiental aprobados por la Autoridad Nacional de Licencias Ambientales (ANLA) y autorizaciones para el uso y vertimiento del recurso hídrico."
+    ],
+    lema: "Cuidamos nuestra agua, nuestra naturaleza y nuestro futuro." },
+  { mito: "Van a acabar con todos los árboles",
+    realidad: [
+      "El aprovechamiento forestal autorizado está delimitado y contempla medidas de manejo, compensación y restauración.",
+      "Únicamente el 17 % del terreno será intervenido; la superficie restante se mantendrá bajo figuras de conservación y protección ambiental."
+    ],
+    lema: "Más árboles, más vida, más futuro." },
+  { mito: "No traerá empleo para la región",
+    realidad: [
+      "Se contempla que en fase de construcción tendremos alrededor de 1.500 empleos entre directos e indirectos y para la fase de operación tendremos alrededor de 7.000 empleos locales."
+    ],
+    lema: "Empleo, desarrollo y oportunidades para nuestra comunidad." },
+  { mito: "No tiene nada que ver con turismo sostenible",
+    realidad: [
+      "La Autoridad Nacional de Licencias Ambientales (ANLA) aprobó el proyecto como un modelo de turismo sostenible que promueve la conservación de la naturaleza, la educación ambiental, el agroturismo y el desarrollo responsable del territorio.",
+      "Se trabajará por la obtención de certificaciones de sostenibilidad en la construcción y operación (EDGE y LEED)."
+    ],
+    lema: "Turismo que protege hoy para las futuras generaciones." }
+];
+
+const GANANCIAS = [
+  "Más empleo y oportunidades", "Dinamización de la economía local", "Fortalecimiento del turismo",
+  "Oportunidades para emprendedores y comerciantes", "Nuevos servicios turísticos",
+  "Conexión entre turismo, campo y cultura", "Oportunidades para artesanos y productores locales",
+  "Proyección del Quindío como destino turístico sostenible"
+];
+
+const ESPECIES = [
+  { grupo: "Pioneras", lista: "Yarumo (Cecropia peltata), Nacedero (Trema micrantha), Balso (Heliocarpus americanus)" },
+  { grupo: "Intermedias", lista: "Mestizo (Cupania americana), Cenizo (Pseudolmedia laevigata), Guamos (Inga edulis)" },
+  { grupo: "Tardías", lista: "Higuerones (Ficus insipida), Laurel criollo (Ocotea velloziana), Cedro negro (Juglans neotropica)" }
+];
+
+/* Ejemplo de un mapa:
+   { titulo: "Zonificación de manejo ambiental",
+     imagen: "img/mapa-zonificacion.jpg",
+     descripcion: "Áreas de exclusión y de intervención con restricciones.",
+     pdf: "docs/mapa-zonificacion.pdf" }                          */
+const MAPAS = [];
+
+/* ========================================================= */
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function pintarMitos(){
+  const cont = document.getElementById("mitos-contenido");
+  if(!MITOS.length){
+    cont.innerHTML = `
+      <div class="vacio">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#B8893B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12h30v20H20l-8 7v-7H8z"/><path d="M26 38v4h18l8 7v-7h4V22H44"/></svg>
+        <h2>Sección en preparación</h2>
+        <p>Muy pronto encontrarás aquí las respuestas a las preguntas más frecuentes sobre el proyecto, cada una con su fuente oficial.</p>
+      </div>`;
+    return;
+  }
+  const parrafos = r => (Array.isArray(r) ? r : [r]).map(t => `<p>${esc(t)}</p>`).join("");
+  cont.innerHTML = `
+    <section class="bloque">
+      <h2><span class="num">1</span>¿Mitos o realidades?</h2>
+      <div class="acordeon">${MITOS.map((m,i) => `
+        <details ${i===0 ? "open" : ""}>
+          <summary><span><span class="mito-tag">Mito</span>“${esc(m.mito)}”</span></summary>
+          <div class="realidad justificado">
+            <span class="tag">Realidad</span>
+            ${parrafos(m.realidad)}
+            ${m.lema ? `<p class="lema">${esc(m.lema)}</p>` : ""}
+            ${m.fuente ? `<p class="fuente">Fuente: ${m.enlace ? `<a href="${esc(m.enlace)}">${esc(m.fuente)}</a>` : esc(m.fuente)}</p>` : ""}
+          </div>
+        </details>`).join("")}
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2><span class="num">2</span>¿Qué puede ganar Quimbaya?</h2>
+      <ul class="ganancias">${GANANCIAS.map(g => `<li>${esc(g)}</li>`).join("")}</ul>
+    </section>
+
+    <section class="bloque justificado">
+      <h2><span class="num">3</span>Especies para restauración ecológica</h2>
+      <p>Dando cumplimiento a las obligaciones del Plan de Manejo Ambiental (PMA), las especies que se van a sembrar son:</p>
+      <div class="especies">${ESPECIES.map(e => `<div><h3>${esc(e.grupo)}</h3><p>${esc(e.lista)}</p></div>`).join("")}</div>
+      <p class="lema">Sembramos más de lo que intervenimos, para que el bosque siga creciendo.</p>
+    </section>
+
+    <section class="bloque">
+      <h2><span class="num">4</span>Mira la pieza completa</h2>
+      <div class="visor-marco">
+        <iframe src="docs/mitos-y-realidades-territorio-panaca.pdf#view=FitH" title="Visor de la pieza Mitos y realidades" loading="lazy"></iframe>
+      </div>
+      <p class="solo-movil peso">Si el documento no se ve en tu celular, ábrelo en una pestaña nueva.</p>
+      <div class="acciones">
+        <a class="btn btn-primario" href="docs/mitos-y-realidades-territorio-panaca.pdf" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Descargar pieza
+        </a>
+        <a class="btn btn-secundario" href="docs/mitos-y-realidades-territorio-panaca.pdf" target="_blank" rel="noopener">Abrir en pestaña nueva</a>
+        <span class="peso">PDF · 8 páginas · 17,8 MB</span>
+      </div>
+    </section>
+
+    <p class="cierre">Territorio Panaca: desarrollo, turismo y oportunidades para Quimbaya, con compromisos ambientales y seguimiento de las autoridades.</p>`;
+}
+
+function pintarMapas(){
+  const cont = document.getElementById("mapas-contenido");
+  if(!MAPAS.length){
+    cont.innerHTML = `
+      <div class="vacio">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#8A9A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14l16-6 20 6 16-6v42l-16 6-20-6-16 6z"/><path d="M22 8v42M42 14v42"/></svg>
+        <h2>Mapas en preparación</h2>
+        <p>Muy pronto podrás consultar aquí los mapas del área del proyecto, de las zonas protegidas y de las veredas del área de influencia.</p>
+      </div>`;
+    return;
+  }
+  cont.innerHTML = `<div class="galeria-mapas">${MAPAS.map(m => `
+    <figure>
+      ${m.imagen ? `<img src="${esc(m.imagen)}" alt="${esc(m.titulo)}" loading="lazy">` : ""}
+      <figcaption><strong>${esc(m.titulo)}</strong><br>${esc(m.descripcion)}
+        ${m.pdf ? `<div class="acciones"><a class="btn btn-primario" href="${esc(m.pdf)}" download>Descargar</a></div>` : ""}
+      </figcaption>
+    </figure>`).join("")}</div>`;
+}
+
+/* Navegación entre vistas con el ancla de la URL */
+const VISTAS = ["inicio","plan-maestro","resolucion","cartografia","mitos","pma"];
+const TITULOS = {inicio:"Documentos del proyecto", "plan-maestro":"Plan Maestro", resolucion:"Resolución", cartografia:"Cartografía", mitos:"Mitos y realidades", pma:"Plan de Manejo Ambiental"};
+function mostrar(){
+  let v = (location.hash || "#inicio").slice(1);
+  if(!VISTAS.includes(v)) v = "inicio";
+  document.querySelectorAll(".vista").forEach(s => s.classList.toggle("activa", s.dataset.vista === v));
+  const btn = document.querySelector('[data-nav="inicio"]');
+  if(v === "inicio") btn.setAttribute("aria-current","page"); else btn.removeAttribute("aria-current");
+  document.title = `Territorio Panaca | ${TITULOS[v]}`;
+  window.scrollTo(0,0);
+  const h = document.querySelector(`#v-${v} h1`);
+  if(h && v !== "inicio"){ h.setAttribute("tabindex","-1"); h.focus({preventScroll:true}); }
+}
+pintarMitos();
+pintarMapas();
+window.addEventListener("hashchange", mostrar);
+mostrar();
+</script>
+</body>
+</html>
